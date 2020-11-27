@@ -51,9 +51,11 @@ class _MyAppState extends State<MyApp> {
       setState(() {
         _favoritesMeals.removeAt(existingIndex);
       });
-    }else setState(() {
-      _favoritesMeals.add(DUMMY_MEALS.firstWhere((meal) => meal.id == mealId));
-    });
+    } else
+      setState(() {
+        _favoritesMeals
+            .add(DUMMY_MEALS.firstWhere((meal) => meal.id == mealId));
+      });
   }
 
   @override
