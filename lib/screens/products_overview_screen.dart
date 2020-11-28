@@ -1,4 +1,5 @@
 import 'package:first_app/models/product.dart';
+import 'package:first_app/widgets/product_item.dart';
 import 'package:flutter/material.dart';
 
 class ProductsOverViewScreen extends StatelessWidget {
@@ -36,13 +37,23 @@ class ProductsOverViewScreen extends StatelessWidget {
           'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Cast-Iron-Pan.jpg/1024px-Cast-Iron-Pan.jpg',
     ),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('MyShop'),
+        title: const Text('MyShop'),
       ),
-      body: GridView.builder(gridDelegate: null, itemBuilder: null),
+      body: GridView.builder(
+        padding: const EdgeInsets.all(10.0),
+        itemCount: loadedProducts.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 3 / 2,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10),
+        itemBuilder: (context, index) => ProductItem(loadedProducts[index]),
+      ),
     );
   }
 }
