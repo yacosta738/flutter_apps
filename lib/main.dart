@@ -7,11 +7,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'MyShop',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: ProductsOverViewScreen(),
-    );
+        title: 'MyShop',
+        theme: ThemeData(
+          primarySwatch: Colors.purple,
+          accentColor: Colors.deepOrange,
+          fontFamily: 'Lato',
+        ),
+        home: ProductsOverViewScreen(),
+        routes: {
+          // ProductDetailScreen.routeName: (ctx) => ProductDetailScreen(),
+        });
   }
 }
