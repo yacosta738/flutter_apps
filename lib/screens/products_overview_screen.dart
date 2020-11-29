@@ -1,4 +1,5 @@
 import 'package:first_app/providers/products.dart';
+import 'package:first_app/widgets/badge.dart';
 import 'package:first_app/widgets/products_grid.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -20,7 +21,6 @@ class _ProductsOverViewScreenState extends State<ProductsOverViewScreen> {
       appBar: AppBar(
         title: const Text('MyShop'),
         actions: [
-          IconButton(icon: Icon(Icons.add_shopping_cart), onPressed: null),
           PopupMenuButton(
             itemBuilder: (_) => [
               PopupMenuItem(
@@ -43,6 +43,11 @@ class _ProductsOverViewScreenState extends State<ProductsOverViewScreen> {
               });
             },
           ),
+          Badge(
+              child: Icon(
+                Icons.shopping_cart,
+              ),
+              value: null)
         ],
       ),
       body: ProductGrid(_showOnlyFavorites),
