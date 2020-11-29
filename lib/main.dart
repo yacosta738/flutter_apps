@@ -1,3 +1,4 @@
+import 'package:first_app/providers/cart.dart';
 import 'package:first_app/providers/products.dart';
 import 'package:first_app/screens/product_detail_screen.dart';
 import 'package:first_app/screens/products_overview_screen.dart';
@@ -9,9 +10,17 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      // Here is better use create methods and default constructor
-      create: (_) => Products(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          // Here is better use create methods and default constructor
+          create: (_) => Products(),
+        ),
+        ChangeNotifierProvider(
+          // Here is better use create methods and default constructor
+          create: (_) => Cart(),
+        ),
+      ],
       child: MaterialApp(
           title: 'MyShop',
           theme: ThemeData(
