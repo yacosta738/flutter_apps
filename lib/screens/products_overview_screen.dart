@@ -1,4 +1,4 @@
-import 'package:first_app/widgets/product_grid.dart';
+import 'package:first_app/widgets/products_grid.dart';
 import 'package:flutter/material.dart';
 
 class ProductsOverViewScreen extends StatelessWidget {
