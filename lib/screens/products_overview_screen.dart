@@ -1,3 +1,4 @@
+import 'package:first_app/providers/cart.dart';
 import 'package:first_app/providers/products.dart';
 import 'package:first_app/widgets/badge.dart';
 import 'package:first_app/widgets/products_grid.dart';
@@ -43,11 +44,16 @@ class _ProductsOverViewScreenState extends State<ProductsOverViewScreen> {
               });
             },
           ),
-          Badge(
-              child: Icon(
+          Consumer<Cart>(
+            builder: (_, cart, child) =>
+                Badge(child: child, value: cart.itemCount.toString()),
+            child: IconButton(
+              icon: Icon(
                 Icons.shopping_cart,
               ),
-              value: null)
+              onPressed: () => print('Hello World!'),
+            ),
+          ),
         ],
       ),
       body: ProductGrid(_showOnlyFavorites),
