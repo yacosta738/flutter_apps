@@ -20,6 +20,7 @@ class _ProductsOverViewScreenState extends State<ProductsOverViewScreen> {
       appBar: AppBar(
         title: const Text('MyShop'),
         actions: [
+          IconButton(icon: Icon(Icons.add_shopping_cart), onPressed: null),
           PopupMenuButton(
             itemBuilder: (_) => [
               PopupMenuItem(
@@ -41,7 +42,7 @@ class _ProductsOverViewScreenState extends State<ProductsOverViewScreen> {
                 }
               });
             },
-          )
+          ),
         ],
       ),
       body: ProductGrid(_showOnlyFavorites),
