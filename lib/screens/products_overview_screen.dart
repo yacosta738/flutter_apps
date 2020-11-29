@@ -1,5 +1,6 @@
 import 'package:first_app/providers/cart.dart';
 import 'package:first_app/providers/products.dart';
+import 'package:first_app/screens/cart_screen.dart';
 import 'package:first_app/widgets/badge.dart';
 import 'package:first_app/widgets/products_grid.dart';
 import 'package:flutter/material.dart';
@@ -51,7 +52,8 @@ class _ProductsOverViewScreenState extends State<ProductsOverViewScreen> {
               icon: Icon(
                 Icons.shopping_cart,
               ),
-              onPressed: () => print('Hello World!'),
+              onPressed: () =>
+                  Navigator.of(context).pushNamed(CartScreen.routeName),
             ),
           ),
         ],
