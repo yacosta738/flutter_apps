@@ -1,6 +1,6 @@
 import 'package:first_app/providers/orders.dart' show Orders;
-import 'package:first_app/widgets/OrderItem.dart';
 import 'package:first_app/widgets/app_drawer.dart';
+import 'package:first_app/widgets/order_item.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
