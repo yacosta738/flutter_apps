@@ -17,7 +17,7 @@ class CardItem extends StatelessWidget {
         child: ListTile(
           leading: CircleAvatar(
             child: Padding(
-                padding: EdgeInsets.all(10),
+                padding: EdgeInsets.all(5),
                 child: FittedBox(
                   child: Text('\$$price'),
                 )),
