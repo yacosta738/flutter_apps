@@ -1,4 +1,5 @@
 import 'package:first_app/providers/cart.dart';
+import 'package:first_app/providers/orders.dart';
 import 'package:first_app/providers/products.dart';
 import 'package:first_app/screens/cart_screen.dart';
 import 'package:first_app/screens/product_detail_screen.dart';
@@ -20,6 +21,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           // Here is better use create methods and default constructor
           create: (_) => Cart(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => Orders(),
         ),
       ],
       child: MaterialApp(
