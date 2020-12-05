@@ -66,7 +66,8 @@ class Products with ChangeNotifier {
       print("....");
   }
 
-  delete(String id) {
+  deleteProduct(String id) {
     _items.removeWhere((prod) => prod.id == id);
+    notifyListeners();
   }
 }
